@@ -73,7 +73,7 @@ class NarBundle:
 
         build_timestamp = current_timestamp.strftime(self.BUILD_TIMESTAMP_FORMAT)
 
-        from src.vastdb_nifi.processors._version import __version__
+        from src.genai_nifi.processors._version import __version__
 
         manifest_lines = [
             "Manifest-Version: 1.0",
@@ -148,7 +148,7 @@ class CustomBuilder(BuilderInterface):
 
     def process_processor_file(self, file_path: Path) -> str:
         """Processes a processor file to replace version placeholders and returns the modified content."""
-        from src.vastdb_nifi.processors._version import __version__
+        from src.genai_nifi.processors._version import __version__
 
         with open(file_path) as f:
             content = f.read()

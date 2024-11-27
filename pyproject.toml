@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "vastdb-nifi"
+name = "genai-nifi"
 dynamic = ["version"]
 description = 'VastDB NiFi Processors.'
 readme = "README.md"
@@ -23,11 +23,6 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "pandas==2.2.2", 
-  "pyarrow==16.1.0", 
-  "pyyaml==6.0.2", 
-  "vastdb==v1.3.1", 
-
   # Shared requirements
   "openai==1.9.0",
   "tiktoken",
@@ -54,28 +49,28 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/vast-data/vastdb_nifi#readme"
-Issues = "https://github.com/vast-data/vastdb_nifi/issues"
-Source = "https://github.com/vast-data/vastdb_nifi"
+Documentation = "https://github.com/snowch/genai_nifi#readme"
+Issues = "https://github.com/snowch/genai_nifi/issues"
+Source = "https://github.com/snowch/genai_nifi"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/vastdb_nifi tests}"
+check = "mypy --install-types --non-interactive {args:src/genai_nifi tests}"
 
 [tool.coverage.run]
-source_pkgs = ["src/vastdb_nifi", "tests"]
+source_pkgs = ["src/genai_nifi", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/vastdb_nifi/__about__.py",
+  "src/genai_nifi/__about__.py",
 ]
 
 [tool.coverage.paths]
-vastdb_nifi = ["src/vastdb_nifi", "*/vastdb-nifi/src/vastdb_nifi"]
-tests = ["tests", "tests/vastdb_nifi/"]
+genai_nifi = ["src/genai_nifi", "*/genai-nifi/src/genai_nifi"]
+tests = ["tests", "tests/genai_nifi/"]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -92,11 +87,11 @@ exclude = [
   "hatch_build.py",
   ".gitignore",
   ".github/",
-  "src/vastdb_nifi/processors/__init__.py"
+  "src/genai_nifi/processors/__init__.py"
 ]
 
 [tool.hatch.build.targets.custom.force-include]
-"src/vastdb_nifi/processors/" = "/"
+"src/genai_nifi/processors/" = "/"
 
 
 [tool.ruff]
@@ -127,4 +122,4 @@ notice-rgx = "# SPDX-License-Identifier: MIT\n"
 source = "vcs"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/vastdb_nifi/processors/_version.py"
+version-file = "src/genai_nifi/processors/_version.py"
