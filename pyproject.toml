@@ -27,7 +27,22 @@ dependencies = [
   "openai==1.9.0",
   "tiktoken",
   "langchain==0.1.11",
-  "unstructured==0.16.8",
+
+  # Parse requirements
+  "pikepdf==8.12.0",
+  "pypdf==4.0.1",
+  "langchain==0.1.7",
+  "unstructured==0.14.8",
+  "unstructured-inference==0.7.36",
+  "unstructured_pytesseract==0.3.12",
+  "pillow-heif==0.15.0",
+  "numpy==1.26.4",
+  "opencv-python==4.9.0.80",
+  "pdf2image==1.17.0",
+  "pdfminer.six==20221105",
+  "python-docx==1.1.0",
+  "openpyxl==3.1.2",
+  "python-pptx==0.6.23",
   
   # Chroma requirements
   "chromadb==0.4.22",
