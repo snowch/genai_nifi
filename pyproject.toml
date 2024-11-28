@@ -27,6 +27,7 @@ dependencies = [
   "openai==1.9.0",
   "tiktoken",
   "langchain==0.1.11",
+  "unstructured==0.16.8",
   
   # Chroma requirements
   "chromadb==0.4.22",
